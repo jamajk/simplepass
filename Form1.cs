@@ -26,7 +26,6 @@ namespace passgen
         { }
 
         /// <summary>
-        /// when the user clicks the magic button, not much to explain here tho
         /// displays the password and changes button text
         /// </summary>
         private void Button1_Click(object sender, EventArgs e)
@@ -35,8 +34,6 @@ namespace passgen
             Clipboard.SetText(textBox1.Text);
             label2.Text = "The password has been copied to your clipboard.";
             button1.Text = "Generate New";
-            /*wait(3000);*/ // as below, definetely not worth it
-            
         }
 
         /// <summary>
@@ -60,39 +57,11 @@ namespace passgen
 
         private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            label2.Text = ""; //moved here from Button1_click for conveinience and bug-avoidance
+            label2.Text = "";
         }
 
         private void Label2_Click(object sender, EventArgs e)
         { }
-
-
-
-/* fuck it though
- * its creating a really bad bug where the app runs in the background forever if its closed before the timer runs out
- * definetely not worth it
- * keeping for future reference
- 
-        /// <summary>
-        /// a timer, copied in its entirety off fucking stackoverflow lmao (works though)
-        /// </summary>
-        public void wait(int milliseconds)
-        {
-            System.Windows.Forms.Timer timer1 = new System.Windows.Forms.Timer();
-            if (milliseconds == 0 || milliseconds < 0) return;
-            timer1.Interval = milliseconds;
-            timer1.Enabled = true;
-            timer1.Start();
-            timer1.Tick += (s, e) =>
-            {
-                timer1.Enabled = false;
-                timer1.Stop();
-            };
-            while (timer1.Enabled)
-            {
-                Application.DoEvents(); //i read that this is bad practice (as probably most of this program) but works for this simple cause
-            }
-        } */
     }
     
  
